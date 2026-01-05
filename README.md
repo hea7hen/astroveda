@@ -24,7 +24,7 @@ An India-first Vedic Astrology platform powered by AI, providing personalized co
 2. Create a `.env` file in the root directory with the following variables:
    ```env
    # SambaNova API (for AI predictions)
-   SAMBANOVA_API_KEY=fc3cafff-21b3-4ab8-a6b2-980be9e21639
+   SAMBANOVA_API_KEY=ff_api_key
 
    # Razorpay Payment Gateway
    RAZORPAY_KEY_ID=your_razorpay_key_id
