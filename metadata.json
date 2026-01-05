@@ -1,0 +1,8 @@
+
+{
+  "name": "Astroveda",
+  "description": "A premium life-navigation platform using Vedic astrology for emotional clarity and personal decision making.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
