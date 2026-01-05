@@ -8,16 +8,15 @@ const App: React.FC = () => {
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
 
   return (
-    <div className="min-h-screen selection:bg-gold selection:text-slate-900">
-      {/* Background Ambience */}
-      <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[100px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 blur-[100px] rounded-full" />
+    <div className="min-h-screen selection:bg-gold selection:text-slate-900 relative">
+      {/* Translucent cosmic background overlay - subtle for visibility */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/10 to-slate-900/30" />
         <div className="absolute top-[20%] right-[10%] w-[2px] h-[2px] bg-white rounded-full animate-pulse shadow-[0_0_10px_white]" />
         <div className="absolute top-[40%] left-[15%] w-[1.5px] h-[1.5px] bg-white rounded-full animate-pulse delay-700" />
       </div>
 
-      <header className="fixed top-0 left-0 right-0 z-50 glass border-t-0 border-x-0">
+      <header className="fixed top-0 left-0 right-0 z-50 glass border-t-0 border-x-0 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-gold to-amber-700 flex items-center justify-center">
@@ -37,7 +36,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      <main className="pt-20">
+      <main className="pt-20 relative z-10">
         {!userProfile ? (
           <Onboarding onComplete={setUserProfile} />
         ) : (
@@ -47,7 +46,7 @@ const App: React.FC = () => {
 
       {/* Mobile-first bottom nav for Dashboard */}
       {userProfile && (
-        <nav className="fixed bottom-0 left-0 right-0 glass border-b-0 border-x-0 z-50 md:hidden">
+        <nav className="fixed bottom-0 left-0 right-0 glass border-b-0 border-x-0 z-50 md:hidden backdrop-blur-md">
           <div className="flex justify-around items-center py-4">
             <button className="flex flex-col items-center gap-1 text-gold">
                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L2 12h3v9h14v-9h3L12 3zm0 4.84L16.5 12h-1.5v7H9v-7H7.5L12 7.84z"/></svg>
